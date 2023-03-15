@@ -10,3 +10,4 @@
 
 #include "locolib/entity"
 #include "locolib/weapon"
+#include "locolib/weaponid"
