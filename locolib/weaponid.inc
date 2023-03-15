@@ -6,5 +6,14 @@
 #include "../locolib"
 
 methodmap CSWeaponID {
-
+	/**
+	 * 	Check the validity of the index.
+	 * 
+	 * 	@return true on success, false otherwise.
+	 */
+	property bool IsValid {
+		public get() {
+			return CS_IsValidWeaponID(this);
+		}
+	}
 }
