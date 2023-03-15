@@ -9,3 +9,4 @@
 #define bool(%0)	view_as<bool>(%0)
 
 #include "locolib/entity"
+#include "locolib/weapon"
