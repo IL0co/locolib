@@ -57,3 +57,4 @@ enum PlayerTeam {
 #include "locolib/player"
 #include "locolib/weapon"
 #include "locolib/weaponid"
+#include "locolib/stocks"
