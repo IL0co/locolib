@@ -24,6 +24,11 @@ enum WeaponSlot {
 	Slot_Length,									// The total number of slots.
 }
 
+#define RETURN_STATIC_OFFSET(%0,%1) \
+	static any offset = -1; \
+	if(offset == -1) offset = FindSendPropInfo(%0, %1); \
+	return offset
+
 #include "locolib/offset_weapon"
 #include "locolib/entity"
 #include "locolib/weapon"
