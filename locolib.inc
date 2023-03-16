@@ -3,7 +3,8 @@
 #endif
 #define _locolib_included
 
-#include <cstrike>
+#tryinclude <cstrike>
+#tryinclude <sdktools>
 
 #define any(%0)		view_as<any>(%0)
 #define int(%0)		view_as<int>(%0)
