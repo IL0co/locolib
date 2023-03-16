@@ -24,6 +24,7 @@ enum WeaponSlot {
 	Slot_Length,									// The total number of slots.
 }
 
+#include "locolib/offset_weapon"
 #include "locolib/entity"
 #include "locolib/weapon"
 #include "locolib/weaponid"
