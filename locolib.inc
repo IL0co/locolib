@@ -24,6 +24,17 @@ enum WeaponSlot {
 	Slot_Length,									// The total number of slots.
 }
 
+enum PlayerTeam {
+	Team_Invalid 	= -1,							// Invalid team index.
+
+	Team_Spec		= CS_TEAM_SPECTATOR,			// Observer team.
+	Team_None		= CS_TEAM_NONE,					// The player has not selected a team.
+	Team_T			= CS_TEAM_T,					// Terrorist team.
+	Team_CT			= CS_TEAM_CT,					// Counter-terrorist team.
+
+	Team_Length,									// The total number of commands.
+}
+
 #define RETURN_STATIC_OFFSET(%0,%1) \
 	static any offset = -1; \
 	if(offset == -1) offset = FindSendPropInfo(%0, %1); \
