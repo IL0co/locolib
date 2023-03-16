@@ -10,4 +10,14 @@ enum UserId {
 };
 
 methodmap UserId {
+	/**
+	 * 	Get the player's index.
+	 * 
+	 * 	@return player index.
+	 */
+	property Player Player {
+		public get() {
+			return view_as<Player>(GetClientOfUserId(int(this)));
+		}
+	}
 }
