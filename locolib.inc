@@ -12,6 +12,7 @@
 #define bool(%0)	view_as<bool>(%0)
 #define Player(%0)	view_as<Player>(%0)
 #define CSWeaponID(%0)		view_as<CSWeaponID>(%0)
+#define PlayerTeam(%0)		view_as<PlayerTeam>(%0)
 
 #define MAX_ALIAS_LENGTH		32
 
