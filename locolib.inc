@@ -41,8 +41,8 @@ enum PlayerTeam {
 	if(offset == -1) offset = FindSendPropInfo(%0, %1); \
 	return offset
 
-static stock const char EVENT_USERID[]  = "userid";
-static stock const char WEAPON_PREFIX[] = "weapon_";
+#define EVENT_USERID "userid"
+#define WEAPON_PREFIX "weapon_"
 
 #include "locolib/offset_weapon"
 #include "locolib/offset_player"
