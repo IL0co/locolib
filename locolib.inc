@@ -42,6 +42,7 @@ enum PlayerTeam {
 	return offset
 
 static stock const char EVENT_USERID[]  = "userid";
+static stock const char WEAPON_PREFIX[] = "weapon_";
 
 #include "locolib/offset_weapon"
 #include "locolib/weapon_defindex"
