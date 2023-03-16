@@ -10,5 +10,14 @@ enum Weapon {
 };
 
 methodmap Weapon < Entity {
-
+	/**
+	 * 	Get the weapon class index.
+	 * 
+	 * 	@return weapon class index.
+	 */
+	property WeaponDefIndex DefIndex {
+		public get() {
+			return this.GetData(OffsetWeapon.DefIndex());
+		}
+	}
 }
