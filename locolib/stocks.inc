@@ -8,6 +8,21 @@
 /**
  * 	Convert string to lower case.
  * 
+ * 	@param input				Input string.
+ * 	@param output				Output string. The buffer where the result will be placed.
+ * 	@param maxLength			The maximum length of a output string.
+ */
+stock void StringToLower(const char[] input, char[] output, int maxLength) {
+	int inputLen = strlen(input);
+
+	for(int i; i < inputLen && i < maxLength && input[i] != '\0'; i++) {
+		output[i] = CharToLower(input[i]);
+	}
+}
+
+/**
+ * 	Convert string to lower case.
+ * 
  * 	@param input				Input string. The buffer where the result will be placed.
  * 	@param maxLength			The maximum length of a string.
  */
