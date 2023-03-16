@@ -30,6 +30,7 @@ enum WeaponSlot {
 	return offset
 
 #include "locolib/offset_weapon"
+#include "locolib/weapon_defindex"
 #include "locolib/entity"
 #include "locolib/weapon"
 #include "locolib/weaponid"
