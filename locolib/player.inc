@@ -16,4 +16,15 @@ methodmap Player < Entity {
 			return view_as<UserId>(GetClientUserId(int(this)));
 		}
 	}
+	
+	/**
+	 * 	Get the player's team index.
+	 * 
+	 * 	@return command index.
+	 */
+	property PlayerTeam Team {
+		public get() {
+			return PlayerTeam(GetClientTeam(int(this)));
+		}
+	}
 }
