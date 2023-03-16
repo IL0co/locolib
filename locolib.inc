@@ -45,6 +45,7 @@ static stock const char EVENT_USERID[]  = "userid";
 static stock const char WEAPON_PREFIX[] = "weapon_";
 
 #include "locolib/offset_weapon"
+#include "locolib/offset_player"
 #include "locolib/weapon_defindex"
 #include "locolib/userid"
 #include "locolib/entity"
