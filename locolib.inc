@@ -11,6 +11,8 @@
 #define char(%0)	view_as<char>(%0)
 #define bool(%0)	view_as<bool>(%0)
 
+#define MAX_ALIAS_LENGTH		32
+
 enum WeaponSlot {
 	Slot_Invalid	= -1,							// Invalid index.
 
