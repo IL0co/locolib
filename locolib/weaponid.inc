@@ -16,6 +16,18 @@ methodmap CSWeaponID {
 	}
 	
 	/**
+	 * 	Give the player this weapon.
+	 *  
+	 * 	@param client				Player index.
+	 * 	@param count				The number of issued weapons.
+	 */
+	public void Give(int client, int count = 1) {
+		char alias[MAX_ALIAS_LENGTH];
+		CS_WeaponIDToAlias(this, alias, sizeof alias);
+		Weapon.GiveByAlias(client, alias, count);
+	}
+	
+	/**
 	 * 	Check the validity of the index.
 	 * 
 	 * 	@return true on success, false otherwise.
