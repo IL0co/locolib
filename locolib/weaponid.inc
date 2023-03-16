@@ -7,6 +7,15 @@
 
 methodmap CSWeaponID {
 	/**
+	 * 	Get the index of a weapon by its class name or an alias.
+	 * 
+	 * 	@return weapon index.
+	 */
+	public static CSWeaponID FromClassName(const char[] className) {
+		return CS_AliasToWeaponID(className);
+	}
+	
+	/**
 	 * 	Check the validity of the index.
 	 * 
 	 * 	@return true on success, false otherwise.
