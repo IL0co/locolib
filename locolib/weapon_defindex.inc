@@ -6,4 +6,14 @@
 #include "../locolib"
 
 methodmap WeaponDefIndex {
+	/**
+	 * 	Get weapon index.
+	 * 
+	 * 	@return weapon index.
+	 */
+	property CSWeaponID CSWeaponID {
+		public get() {
+			return CS_ItemDefIndexToID(int(this));
+		}
+	}
 }
