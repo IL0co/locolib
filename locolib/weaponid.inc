@@ -18,6 +18,17 @@ methodmap CSWeaponID {
 	}
 	
 	/**
+	 * 	Get the weapon class index.
+	 * 
+	 * 	@return weapon class index.
+	 */
+	property WeaponDefIndex DefIndex {
+		public get() {
+			return view_as<WeaponDefIndex>(CS_WeaponIDToItemDefIndex(this));
+		}
+	}
+	
+	/**
 	 * 	Get a weapon slot.
 	 * 
 	 * 	@return slot index from WeaponSlot.
