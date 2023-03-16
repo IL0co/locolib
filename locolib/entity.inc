@@ -10,5 +10,12 @@ enum Entity {
 };
 
 methodmap Entity {
-
+	/**
+	 * 	Get data from an entity variable.
+	 * 
+	 * 	@return data retrieved from a variable.
+	 */
+	public any GetData(int offset, int size = 4) {
+		return GetEntData(int(this), offset, size);
+	}
 }
