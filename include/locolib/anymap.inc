@@ -110,9 +110,22 @@ methodmap AnyMap < Handle {
 
 		return value;
 	}
+
+	/**
+	 *	Get an array into a hash map.
+	 *
+	 *	@param key 					Cell key.
+	 *	@param buffer 				The buffer where the result will be placed.
+	 *	@param maxLength			The length of the array.
+	 *	@param size					(optional) A buffer where the number of items in the array will be written.
+	 *
+	 *	@return true on success, false otherwise.
+	 */
+	public bool GetArray(any key, any[] buffer, int maxLength, int &size) {
 		char buff[ANYMAP_MAXLENTH];
 		FormatEx(buff, sizeof buff, "%08X", key);
 
-		return view_as<StringMap>(this).SetString(buff, array, replace);
+		return view_as<StringMap>(this).GetArray(buff, buffer, maxLength);
+	}
 	}
 }
