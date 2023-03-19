@@ -127,5 +127,22 @@ methodmap AnyMap < Handle {
 
 		return view_as<StringMap>(this).GetArray(buff, buffer, maxLength);
 	}
+
+	/**
+	 *	Get string from hash map.
+	 *
+	 *	@param key 					Cell key.
+	 *	@param buffer 				The buffer where the result will be placed.
+	 *	@param maxLength			The maximum length of a string.
+	 *	@param size					(optional) A buffer where the number of bytes in the string will be written.
+	 *
+	 *	@return true on success, false otherwise.
+	 */
+	public bool GetString(any key, char[] buffer, int maxLength, int &size) {
+		char buff[ANYMAP_MAXLENTH];
+		FormatEx(buff, sizeof buff, "%08X", key);
+
+		return view_as<StringMap>(this).GetString(buff, buffer, maxLength, size);
+	}
 	}
 }
