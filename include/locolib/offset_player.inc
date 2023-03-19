@@ -16,4 +16,13 @@ methodmap OffsetPlayer {
 	public static int WeaponsList() {
 		RETURN_STATIC_OFFSET("CBasePlayer", "m_hMyWeapons");
 	}
+
+	/**
+	 *	Get the offset of the player's active weapon.
+	 * 
+	 * 	@return offset to access the variable.
+	 */
+	public static int ActiveWeapon() {
+		RETURN_STATIC_OFFSET("CBasePlayer", "m_hActiveWeapon");
+	}
 }
