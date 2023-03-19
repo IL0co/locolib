@@ -31,6 +31,18 @@ methodmap Weapon < Entity {
 			return this.DefIndex.CSWeaponID;
 		}
 	}
+
+	/**
+	 * 	Get a weapon index slot.
+	 * 
+	 * 	@return slot index.
+	 */
+	property WeaponSlot Slot {
+		public get() {
+			return this.CSWeaponID.Slot;
+		}
+	}
+	
 	/**
 	 * 	Get the weapon's entity index from the player's slot.
 	 * 
