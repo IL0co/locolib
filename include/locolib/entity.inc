@@ -13,6 +13,9 @@ methodmap Entity {
 	/**
 	 * 	Get data from an entity variable.
 	 * 
+	 * 	@param offset				Offset to variable.
+	 * 	@param size					Number of bytes to write (valid values are 1, 2, or 4).
+	 * 
 	 * 	@return data retrieved from a variable.
 	 */
 	public any GetData(int offset, int size = 4) {
