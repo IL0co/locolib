@@ -32,11 +32,12 @@ methodmap CSWeaponID {
 	 *  
 	 * 	@param client				Player index.
 	 * 	@param count				The number of issued weapons.
+	 * 	@param equip				True - to set the weapon to the player, false - just drop next to it.
 	 */
-	public void Give(int client, int count = 1) {
+	public void Give(int client, int count = 1, bool equip = true) {
 		char alias[MAX_ALIAS_LENGTH];
 		CS_WeaponIDToAlias(this, alias, sizeof alias);
-		Weapon.GiveByAlias(client, alias, count);
+		Weapon.GiveByAlias(client, alias, count, equip);
 	}
 	
 	/**
