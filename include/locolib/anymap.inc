@@ -29,4 +29,20 @@ methodmap AnyMap < Handle {
 	public AnyMap Clone() {
 		return view_as<AnyMap>(view_as<StringMap>(this).Clone());
 	}
+
+	/**
+	 *	Set value to hash map.
+	 *
+	 *	@param key 					Cell key.
+	 *	@param value 				The value to save.
+	 *	@param replace				If false, it will not replace the existing value for the given key.
+	 *
+	 *	@return true on success, false otherwise.
+	 */
+	public bool SetValue(any key, any value, bool replace = true) {
+		char buff[ANYMAP_MAXLENTH];
+		FormatEx(buff, sizeof buff, "%08X", key);
+
+		return view_as<StringMap>(this).SetValue(buff, value, replace);
+	}
 }
