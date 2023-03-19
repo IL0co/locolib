@@ -15,3 +15,15 @@
 stock any AbsValue(any value) {
     return value < 0 ? -value : value;
 }
+
+/**
+ * 	Returns the minimum of two values.
+ *	
+ * 	@param value1 				First value.
+ * 	@param value2 				Second value.
+ *	
+ * 	@return Minimum value.
+ */
+stock any MinValue(any value1, any value2) {
+    return value1 < value2 ? value1 : value2;
+}
