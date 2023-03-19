@@ -43,4 +43,15 @@ methodmap Entity {
 	public any GetDataEnt(int offset) {
 		return GetEntDataEnt2(int(this), offset);
 	}
+
+	/**
+	 * 	Set entity to entity variable.
+	 * 
+	 * 	@param offset				Offset to variable.
+	 * 	@param value				The value to set.
+	 * 	@param changeState			If true, change will be sent over the network.
+	 */
+	public void SetDataEnt(int offset, any value, bool changeState = false) {
+		SetEntDataEnt2(int(this), offset, value, changeState);
+	}
 }
