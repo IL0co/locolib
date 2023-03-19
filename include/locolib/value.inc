@@ -39,3 +39,22 @@ stock any MinValue(any value1, any value2) {
 stock any MaxValue(any value1, any value2) {
     return value1 > value2 ? value1 : value2;
 }
+
+/**
+ *	Get the length of a number in bits.
+ *	
+ *	@param value 				Value.
+ *	
+ *	@return Length in bits.
+ */
+stock int GetBitsLength(any value) {
+    int bits = 1;
+    value = AbsValue(value);
+
+    while(value > 1) {
+        value >>= 1;
+        bits++;
+    }
+
+    return bits;
+}
