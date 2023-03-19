@@ -172,5 +172,12 @@ methodmap AnyMap < Handle {
 
 		return view_as<StringMap>(this).Remove(buff);
 	}
+
+	/**
+	 *	Removes all keys and their values ​​from the hash map.
+	 */
+	public void Clear() {
+		view_as<StringMap>(this).Clear();
+	}
 	}
 }
