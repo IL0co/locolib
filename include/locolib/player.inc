@@ -27,4 +27,20 @@ methodmap Player < Entity {
 			return PlayerTeam(GetClientTeam(int(this)));
 		}
 	}
+
+	/**
+	 * 	Get or set the player's current active weapon.
+	 * 
+	 * 	@param weapon				Weapon entity index.
+	 * 
+	 * 	@return Weapon entity index.
+	 */
+	property Weapon ActiveWeapon {
+		public get() {
+			return this.GetDataEnt(OffsetPlayer.ActiveWeapon());
+		}
+		public set(Weapon weapon) {
+			this.SetDataEnt(OffsetPlayer.ActiveWeapon(), weapon);
+		}
+	}
 }
