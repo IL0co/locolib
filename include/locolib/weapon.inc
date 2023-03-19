@@ -58,8 +58,10 @@ methodmap Weapon < Entity {
 	 * 	@param alias				The name of the weapon.
 	 * 	@param count				The number of issued weapons.
 	 * 	@param equip				True - to set the weapon to the player, false - just drop next to it.
+	 * 
+	 * 	@return The index of the last issued weapon.
 	 */
-	public static void GiveByAlias(any client, const char[] alias, int count = 1, bool equip = true) {
+	public static Weapon GiveByAlias(any client, const char[] alias, int count = 1, bool equip = true) {
 		int maxLength = strlen(WEAPON_PREFIX) + strlen(alias) + 1;
 		char[] className = new char[maxLength];
 		FormatEx(className, maxLength, WEAPON_PREFIX ... "%s", alias);
@@ -70,7 +72,9 @@ methodmap Weapon < Entity {
 			weapon = GivePlayerItem(client, className);
 			if(equip) {
 				EquipPlayerWeapon(client, weapon);
+			}
 		}
-		}
+
+		return weapon;
 	}
 }
