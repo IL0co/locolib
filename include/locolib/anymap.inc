@@ -191,3 +191,7 @@ methodmap AnyMap < Handle {
 		}
 	}
 }
+
+methodmap AnyMapSnapshot < Handle {
+
+}
