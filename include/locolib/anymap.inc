@@ -20,4 +20,13 @@ methodmap AnyMap < Handle {
 	public AnyMap() {
 		return view_as<AnyMap>(new StringMap());
 	}
+
+	/**
+	 *	Clones the handle and returns a completely new copy that has nothing to do with the original.
+	 *
+	 *	@return Cloned Handle.
+	 */
+	public AnyMap Clone() {
+		return view_as<AnyMap>(view_as<StringMap>(this).Clone());
+	}
 }
