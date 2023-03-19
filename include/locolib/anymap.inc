@@ -78,6 +78,21 @@ methodmap AnyMap < Handle {
 
 		return view_as<StringMap>(this).SetString(buff, buffer, replace);
 	}
+
+	/**
+	 *	Get the value from the hash map into an argument.
+	 *
+	 *	@param key 					Cell key.
+	 *	@param buffer 				The buffer where the result will be placed.
+	 *
+	 *	@return true on success, false otherwise.
+	 */
+	public bool GetValueIn(any key, any &buffer) {
+		char buff[ANYMAP_MAXLENTH];
+		FormatEx(buff, sizeof buff, "%08X", key);
+
+		return view_as<StringMap>(this).GetValue(buff, buffer);
+	}
 		char buff[ANYMAP_MAXLENTH];
 		FormatEx(buff, sizeof buff, "%08X", key);
 
