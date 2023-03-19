@@ -158,5 +158,19 @@ methodmap AnyMap < Handle {
 
 		return view_as<StringMap>(this).ContainsKey(buff);
 	}
+
+	/**
+	 *	Remove the key and its value from the hash map.
+	 *
+	 *	@param key 					Cell key.
+	 *
+	 *	@return true on success, false otherwise.
+	 */
+	public bool Remove(any key) {
+		char buff[ANYMAP_MAXLENTH];
+		FormatEx(buff, sizeof buff, "%08X", key);
+
+		return view_as<StringMap>(this).Remove(buff);
+	}
 	}
 }
