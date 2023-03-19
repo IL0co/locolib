@@ -181,6 +181,16 @@ methodmap AnyMap < Handle {
 	}
 
 	/**
+	 *	Create a snapshot of the keys in the hash map.
+	 *	@note You must remove (close) Handle after use.
+	 *
+	 *	@return The hash map snapshot handle.
+	 */
+	public AnyMapSnapshot Snapshot() {
+		return view_as<AnyMapSnapshot>(view_as<StringMap>(this).Snapshot());
+	}
+
+	/**
 	 *	Get the number of keys in the hash map.
 	 *	
 	 *	@return number of keys.
