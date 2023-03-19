@@ -45,4 +45,21 @@ methodmap AnyMap < Handle {
 
 		return view_as<StringMap>(this).SetValue(buff, value, replace);
 	}
+
+	/**
+	 *	Set array to hash map.
+	 *
+	 *	@param key 					Cell key.
+	 *	@param array 				The array to save.
+	 *	@param items 				The number of items in the array.
+	 *	@param replace				If false, it will not replace the existing value for the given key.
+	 *
+	 *	@return true on success, false otherwise.
+	 */
+	public bool SetArray(any key, const any[] array, int items, bool replace = true) {
+		char buff[ANYMAP_MAXLENTH];
+		FormatEx(buff, sizeof buff, "%08X", key);
+
+		return view_as<StringMap>(this).SetArray(buff, array, items, replace);
+	}
 }
