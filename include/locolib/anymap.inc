@@ -5,6 +5,10 @@
 
 #include "../locolib"
 
+#if !defined ANYMAP_MAXLENTH
+	#define ANYMAP_MAXLENTH 	9		// The maximum buffer length for a number.
+#endif
+
 methodmap AnyMap < Handle {
 	/**
 	 *	Create hash map. A complete analog of StrinMap, but numbers are used instead of lowercase keys.
