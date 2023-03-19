@@ -214,4 +214,22 @@ methodmap AnyMapSnapshot < Handle {
 		}
 	}
 
+	/**
+	 *	Get the key by index.
+	 *	@note If you use floats as keys, it will return a different value.
+	 *		  For example, the keys were 1.15, and 1.1499999999 will be returned...
+	 *		  But it will be valid for use in AnyMap.
+	 * 
+	 *	@param index 				Index, starts from 0.
+	 *
+	 * 	@error						Index out of range. (0 > index > this.Length)
+	 * 
+	 *	@return key at the current index.
+	 */
+	public any GetKey(int index) {
+		char buff[ANYMAP_MAXLENTH];
+		view_as<StringMapSnapshot>(this).GetKey(index, buff, sizeof buff);
+
+		return StringToInt(buff, 16);
+	}
 }
