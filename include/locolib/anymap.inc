@@ -144,5 +144,19 @@ methodmap AnyMap < Handle {
 
 		return view_as<StringMap>(this).GetString(buff, buffer, maxLength, size);
 	}
+
+	/**
+	 *	Check for the presence of a key in the hash map.
+	 *
+	 *	@param key 					Cell key.
+	 *
+	 *	@return true on success, false otherwise.
+	 */
+	public bool ContainsKey(any key) {
+		char buff[ANYMAP_MAXLENTH];
+		FormatEx(buff, sizeof buff, "%08X", key);
+
+		return view_as<StringMap>(this).ContainsKey(buff);
+	}
 	}
 }
