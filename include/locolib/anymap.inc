@@ -179,5 +179,15 @@ methodmap AnyMap < Handle {
 	public void Clear() {
 		view_as<StringMap>(this).Clear();
 	}
+
+	/**
+	 *	Get the number of keys in the hash map.
+	 *	
+	 *	@return number of keys.
+	 */
+	property int Size {
+		public get() {
+			return view_as<StringMap>(this).Size;
+		}
 	}
 }
