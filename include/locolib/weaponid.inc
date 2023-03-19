@@ -16,6 +16,18 @@ methodmap CSWeaponID {
 	}
 	
 	/**
+	 *  Get a weapon alias.
+	 *  
+	 * 	@param buffer				The buffer where the result will be placed.
+	 * 	@param maxLength			The maximum length of the buffer.
+	 * 
+	 * 	@return The number of bytes written.
+	 */
+	public int GetAlias(char[] buffer, int maxLength) {
+		return CS_WeaponIDToAlias(this, buffer, maxLength);
+	}
+	
+	/**
 	 * 	Give the player this weapon.
 	 *  
 	 * 	@param client				Player index.
