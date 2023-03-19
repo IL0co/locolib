@@ -20,7 +20,7 @@ methodmap Weapon < Entity {
 			return this.GetData(OffsetWeapon.DefIndex());
 		}
 	}
-	
+
 	/**
 	 * 	Get weapon index.
 	 * 
@@ -98,5 +98,15 @@ methodmap Weapon < Entity {
 		}
 
 		return weapon;
+	}
+
+	/**
+	 * 	Set active for the player.
+	 * 	@note The weapon must be equipped by the player.
+	 *  
+	 * 	@param client				Player index.
+	 */
+	public void SetActiveTo(any client) {
+		view_as<Player>(client).SetDataEnt(OffsetPlayer.ActiveWeapon(), this);
 	}
 }
