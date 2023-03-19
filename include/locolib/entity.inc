@@ -32,4 +32,15 @@ methodmap Entity {
 	public void SetData(int offset, any value, int size = 4) {
 		SetEntData(int(this), offset, value, size);
 	}
+
+	/**
+	 * 	Get entity from entity variable.
+	 * 
+	 * 	@param offset				Offset to variable.
+	 * 
+	 * 	@return received entity from entity variable.
+	 */
+	public any GetDataEnt(int offset) {
+		return GetEntDataEnt2(int(this), offset);
+	}
 }
