@@ -49,6 +49,7 @@ enum PlayerTeam {
 #define EVENT_USERID "userid"
 #define WEAPON_PREFIX "weapon_"
 
+#include "locolib/value"
 #include "locolib/offset_weapon"
 #include "locolib/offset_player"
 #include "locolib/weapon_defindex"
