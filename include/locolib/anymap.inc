@@ -203,5 +203,15 @@ methodmap AnyMap < Handle {
 }
 
 methodmap AnyMapSnapshot < Handle {
+	/**
+	 *	Get the number of keys in the hash map.
+	 *	
+	 *	@return the number of keys in the snapshot.
+	 */
+	property int Length {
+		public get() {
+			return view_as<StringMapSnapshot>(this).Length;
+		}
+	}
 
 }
