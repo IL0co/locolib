@@ -11,29 +11,29 @@ enum Codec {
 
 methodmap Codec {
 	/**
-	 *	Decodes two values into one integer value.
+	 *	Encodes two values into one integer value.
 	 *	@note Float numbers are not encoded since it occupies the entire range (sign, mantis, exponent).
 	 *
 	 *	@param value1 				First value.
 	 *	@param value2 				Second value.
 	 *	@param maxlengthValue2		The maximum number that can be in the second value.
 	 *
-	 *	@return Decoded value.
+	 *	@return encoded value.
 	 */
-	public static int Decode(any value1, any value2, int maxlengthValue2 = 0xFFFF) {
+	public static int Encode(any value1, any value2, int maxlengthValue2 = 0xFFFF) {
 		return (value1 << GetBitsLength(maxlengthValue2) | value2);
 	}
 
 	/**
-	 *	Encodes an integer value into two values.
+	 *	Decodes an integer value into two values.
 	 *
-	 *	@param decoded 				Encoded value.
+	 *	@param encoded 				Encoded value.
 	 *	@param value1 				First value.
 	 *	@param value2 				Second value.
 	 *	@param maxlengthValue2		The maximum number that can be in the second value.
 	 */
-	public static void Encode(any decoded, any &value1, any &value2, int maxlengthValue2 = 0xFFFF) {
-		value1 = (decoded >> GetBitsLength(maxlengthValue2));
-		value2 = (decoded & maxlengthValue2);
+	public static void Decode(any encoded, any &value1, any &value2, int maxlengthValue2 = 0xFFFF) {
+		value1 = (encoded >> GetBitsLength(maxlengthValue2));
+		value2 = (encoded & maxlengthValue2);
 	}
 }
