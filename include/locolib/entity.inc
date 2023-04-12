@@ -25,6 +25,19 @@ methodmap Entity {
 	}
 
 	/**
+	 * 	Set data from an entity variable.
+	 * 
+	 * 	@param type					Property type.
+	 * 	@param prop					Property name.
+	 * 	@param value				The value to set.
+	 * 	@param size					Number of bytes to write (valid values are 1, 2, or 4).
+	 * 	@param element				Item number. (if it's an array)
+	 */
+	public void SetProp(PropType type, const char[] prop, any value, int size = 4, int element = 0) {
+		SetEntProp(int(this), type, prop, value, size, element);
+	}
+
+	/**
 	 * 	Get data from an entity variable.
 	 * 
 	 * 	@param offset				Offset to variable.
