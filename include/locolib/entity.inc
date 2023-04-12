@@ -56,6 +56,15 @@ methodmap Entity {
 	}
 
 	/**
+	 * 	Check entity validity.
+	 * 
+	 * 	@return received entity from entity variable.
+	 */
+	public bool IsValid() {
+		return int(this) > 0 && IsValidEntity(int(this));
+	}
+
+	/**
 	 * 	Get the HammerID index of an entity.
 	 * 
 	 * 	@return Index HammerID or 0 if it doesn't have one.
