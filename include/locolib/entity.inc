@@ -13,6 +13,20 @@ methodmap Entity {
 	/**
 	 * 	Get data from an entity variable.
 	 * 
+	 * 	@param type					Property type.
+	 * 	@param prop					Property name.
+	 * 	@param size					Number of bytes to write (valid values are 1, 2, or 4).
+	 * 	@param element				Item number. (if it's an array)
+	 * 
+	 * 	@return data retrieved from a variable.
+	 */
+	public any GetProp(PropType type, const char[] prop, int size = 4, int element = 0) {
+		return GetEntProp(int(this), type, prop, size, element);
+	}
+
+	/**
+	 * 	Get data from an entity variable.
+	 * 
 	 * 	@param offset				Offset to variable.
 	 * 	@param size					Number of bytes to write (valid values are 1, 2, or 4).
 	 * 
@@ -87,7 +101,7 @@ methodmap Entity {
 	 */
 	property int HammerID {
 		public get() {
-			return this.GetDataEnt(OffsetEntity.HammerID());
+			return this.GetProp(Prop_Data, "m_iHammerID");
 		}
 	}
 	
