@@ -57,6 +57,7 @@ enum PlayerTeam {
 #include "locolib/offset_player"
 #include "locolib/weapon_defindex"
 #include "locolib/userid"
+#include "locolib/refindex"
 #include "locolib/entity"
 #include "locolib/player"
 #include "locolib/weapon"
