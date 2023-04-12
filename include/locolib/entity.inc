@@ -65,6 +65,22 @@ methodmap Entity {
 	}
 
 	/**
+	 * 	Remove entity from the world.
+	 * 	
+	 * 	@note The method does not remove entity 0 (world, aka server).
+	 * 
+	 * 	@return true on success, false otherwise.
+	 */
+	public bool Remove() {
+		if(int(this) > 0 && int(this) < GetMaxEntities()) {
+			RemoveEntity(int(this));
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
 	 * 	Get the HammerID index of an entity.
 	 * 
 	 * 	@return Index HammerID or 0 if it doesn't have one.
