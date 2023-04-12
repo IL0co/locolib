@@ -54,4 +54,15 @@ methodmap Entity {
 	public void SetDataEnt(int offset, any value, bool changeState = false) {
 		SetEntDataEnt2(int(this), offset, value, changeState);
 	}
+
+	/**
+	 * 	Get the HammerID index of an entity.
+	 * 
+	 * 	@return Index HammerID or 0 if it doesn't have one.
+	 */
+	property int HammerID {
+		public get() {
+			return this.GetDataEnt(OffsetEntity.HammerID());
+		}
+	}
 }
