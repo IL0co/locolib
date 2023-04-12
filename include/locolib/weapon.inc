@@ -74,6 +74,21 @@ methodmap Weapon < Entity {
 	}
 
 	/**
+	 * 	Check the visibility of this weapon with one of the players.
+	 *  
+	 * 	@return client index, or 0 if no one has one.
+	 */
+	public any IsHaveInAnyPlayer() {
+		for(int i = 1; i <= MaxClients; i++) {
+			if(IsClientInGame(i) && IsPlayerAlive(i) && this.IsHaveInPlayer(i)) {
+				return i;
+			}
+		}
+
+		return 0;
+	}
+
+	/**
 	 * 	Give the player a weapon by its name.
 	 *  
 	 * 	@param client				Player index.
