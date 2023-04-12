@@ -43,4 +43,23 @@ methodmap Player < Entity {
 			this.SetDataEnt(OffsetPlayer.ActiveWeapon(), weapon);
 		}
 	}
+
+	/**
+	 * 	And disarm the player from all weapons.
+	 * 
+	 * 	@param deleteWeapon			Should you delete the weapon?
+	 */
+	public void Disarm(bool deleteWeapon = true) {
+		int weapon, offset = OffsetPlayer.WeaponsList();
+		
+		do {
+			if((weapon = GetEntDataEnt2(int(this), offset)) != -1) {
+				RemovePlayerItem(int(this), weapon);
+
+				if(deleteWeapon && weapon > MaxClients) {
+					RemoveEntity(weapon);
+				}
+			}
+		} while(weapon != -1);
+	}
 }
