@@ -10,4 +10,14 @@ enum RefIndex {
 };
 
 methodmap RefIndex {
+	/**
+	 * 	Get the entity index.
+	 * 
+	 * 	@return index entities or -1 if ref is invalid.
+	 */
+	property Entity Entity {
+		public get() {
+			return view_as<Entity>(EntRefToEntIndex(int(this)));
+		}
+	}
 }
