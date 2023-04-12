@@ -20,4 +20,15 @@ methodmap RefIndex {
 			return view_as<Entity>(EntRefToEntIndex(int(this)));
 		}
 	}
+
+	/**
+	 * 	Get the weapon index.
+	 * 
+	 * 	@return weapon index or -1 if ref is invalid.
+	 */
+	property Weapon Weapon {
+		public get() {
+			return view_as<Weapon>(this.Entity);
+		}
+	}
 }
