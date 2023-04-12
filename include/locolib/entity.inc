@@ -74,4 +74,17 @@ methodmap Entity {
 			return this.GetDataEnt(OffsetEntity.HammerID());
 		}
 	}
+	
+	/**
+	 * 	Convert the entity index to a unique encoded index (reference).
+	 * 
+	 * 	@error Entity index >= GetMaxEntities() or < 0.
+	 * 
+	 * 	@return reference index entities.
+	 */
+	property RefIndex RefIndex {
+		public get() {
+			return view_as<RefIndex>(EntIndexToEntRef(int(this)));
+		}
+	}
 }
