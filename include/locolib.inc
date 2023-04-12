@@ -51,6 +51,7 @@ enum PlayerTeam {
 
 #include "locolib/value"
 #include "locolib/codec"
+#include "locolib/convarex"
 #include "locolib/anymap"
 #include "locolib/offset_entity"
 #include "locolib/offset_weapon"
