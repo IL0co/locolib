@@ -56,6 +56,17 @@ methodmap Player < Entity {
 	}
 
 	/**
+	 * 	Obtain a weapon from the player's slot.
+	 * 
+	 * 	@param slot					Weapon slot index.
+	 * 
+	 * 	@return weapon entity index or -1 if there is no weapon.
+	 */
+	public Weapon GetWeapon(any slot) {
+		return view_as<Weapon>(GetPlayerWeaponSlot(int(this), slot));
+	}
+
+	/**
 	 * 	And disarm the player from all weapons.
 	 * 
 	 * 	@param deleteWeapon			Should you delete the weapon?
