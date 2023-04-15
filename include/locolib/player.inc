@@ -50,16 +50,18 @@ methodmap Player < Entity {
 	 * 	@param deleteWeapon			Should you delete the weapon?
 	 */
 	public void Disarm(bool deleteWeapon = true) {
-		int weapon, offset = OffsetPlayer.WeaponsList();
-		
-		do {
-			if((weapon = GetEntDataEnt2(int(this), offset)) != -1) {
-				RemovePlayerItem(int(this), weapon);
+		Weapon weapon;
+		int attempts;
 
-				if(deleteWeapon && weapon > MaxClients) {
-					RemoveEntity(weapon);
+		for(WeaponSlot slot; slot < Slot_Length; slot++) {
+			attempts = 20;
+
+			while(--attempts && (weapon = this.GetWeapon(slot)) > Weapon_Invalid) {
+				if(this.RemoveWeapon(weapon) && deleteWeapon) {
+					weapon.Remove();
 				}
 			}
-		} while(weapon != -1);
+
+		}
 	}
 }
