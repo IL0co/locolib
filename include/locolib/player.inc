@@ -45,6 +45,17 @@ methodmap Player < Entity {
 	}
 
 	/**
+	 * 	Take the weapon from the player.
+	 * 
+	 * 	@param weapon				Weapon entity index.
+	 * 
+	 * 	@return True on success, false otherwise.
+	 */
+	public bool RemoveWeapon(any weapon) {
+		return RemovePlayerItem(int(this), weapon);
+	}
+
+	/**
 	 * 	And disarm the player from all weapons.
 	 * 
 	 * 	@param deleteWeapon			Should you delete the weapon?
