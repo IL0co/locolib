@@ -25,4 +25,13 @@ methodmap OffsetPlayer {
 	public static int ActiveWeapon() {
 		RETURN_STATIC_OFFSET("CBasePlayer", "m_hActiveWeapon");
 	}
+
+	/**
+	 *	Get the offset of the player's armor.
+	 * 
+	 * 	@return offset to access the variable.
+	 */
+	public static int Armor() {
+		RETURN_STATIC_OFFSET("CCSPlayer", "m_ArmorValue");
+	}
 }
