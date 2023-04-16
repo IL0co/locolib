@@ -70,8 +70,10 @@ methodmap Player < Entity {
 	 * 	And disarm the player from all weapons.
 	 * 
 	 * 	@param deleteWeapon			Should you delete the weapon?
+	 * 	@param toss					True to toss weapon (with velocity) or false to just drop weapon.
+	 * 	@param blockHook			Set to true to stop the corresponding CS_OnCSWeaponDrop.
 	 */
-	public void Disarm(bool deleteWeapon = true) {
+	public void Disarm(bool deleteWeapon = true, bool toss = false, bool blockHook = false) {
 		Weapon weapon;
 		int attempts;
 
@@ -79,7 +81,9 @@ methodmap Player < Entity {
 			attempts = 20;
 
 			while(--attempts && (weapon = this.GetWeapon(slot)) > Weapon_Invalid) {
-				if(this.RemoveWeapon(weapon) && deleteWeapon) {
+				CS_DropWeapon(int(this), int(weapon), toss, blockHook);
+
+				if(deleteWeapon) {
 					weapon.Remove();
 				}
 			}
