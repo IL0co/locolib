@@ -29,6 +29,20 @@ methodmap Player < Entity {
 	}
 
 	/**
+	 * 	Get or give out armor for the player.
+	 * 
+	 * 	@return current amount of armor.
+	 */
+	property int Armor {
+		public get() {
+			return this.GetData(OffsetPlayer.Armor());
+		}
+		public set(int value) {
+			this.SetData(OffsetPlayer.Armor(), value);
+		}
+	}
+
+	/**
 	 * 	Get or set the player's current active weapon.
 	 * 
 	 * 	@param weapon				Weapon entity index.
