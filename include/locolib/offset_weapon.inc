@@ -14,4 +14,13 @@ methodmap OffsetWeapon {
 	public static int DefIndex() {
 		RETURN_STATIC_OFFSET("CBaseCombatWeapon", "m_iItemDefinitionIndex");
 	}
+
+	/**
+	 * 	Get the weapon primary ammo offset.
+	 * 
+	 * 	@return offset to access the variable.
+	 */
+	public static int Clip1() {
+		RETURN_STATIC_OFFSET("CBaseCombatWeapon", "m_iClip1");
+	}
 }
