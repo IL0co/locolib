@@ -42,7 +42,21 @@ methodmap Weapon < Entity {
 			return this.CSWeaponID.Slot;
 		}
 	}
-	
+
+	/**
+	 * 	Get or recover ammo in the weapon shop.
+	 * 
+	 * 	@return the number of rounds.
+	 */
+	property int PrimaryAmmo {
+		public get() {
+			return this.GetData(OffsetWeapon.Clip1());
+		}
+		public set(int value) {
+			this.SetData(OffsetWeapon.Clip1(), value);
+		}
+	}
+
 	/**
 	 * 	Get the weapon's entity index from the player's slot.
 	 * 
